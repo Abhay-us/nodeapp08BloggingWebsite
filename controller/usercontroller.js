@@ -20,10 +20,10 @@ exports.getUserById = async (req, res) => {
 }
 
 exports.postUser = async (req, res) => {
-    const { name, email, phoneNumber, gender } = req.body;
+    const { name, email, phoneNumber, password, gender } = req.body;
 
     try {
-        const user = new userTable({ name, email, phoneNumber, gender });
+        const user = new userTable({ name, email, password, phoneNumber, gender });
         await user.save();
 
         res.json(user);
@@ -33,11 +33,12 @@ exports.postUser = async (req, res) => {
 }
 
 exports.putUser = async (req, res) => {
-    const { name, email, phoneNumber, gender } = req.body;
+    const { name, email, phoneNumber, password, gender } = req.body;
     try {
         const user = await userTable.findById(req.params.id);
         user.name = name;
-        user.email = email
+        user.email = email;
+        user.password = password;
         user.phoneNumber = phoneNumber;
         user.gender = gender;
 

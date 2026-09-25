@@ -2,9 +2,13 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const mongoose = require('mongoose');
 const morgan = require('morgan')
+const cors = require('cors');
+
 const app = express();
 
 const url = "mongodb://127.0.0.1:27017/blogging-website";
+
+app.use(cors({ origin: 'http://localhost:5173' }));
 
 // Middleware
 app.use(morgan('tiny'));
