@@ -67,14 +67,7 @@ exports.getUserByEmail = async (req, res) => {
     const { email } = req.body;
     try {
         const user = await userTable.findOne({ email: email });
-        if (!user) {
-            return res.status(404).json({
-                message: "Email not registered"
-            });
-        }
-        res.status(200).json({
-            message: "Email verified"
-        });
+        res.json(user);
     } catch (error) {
         res.status(400).send("unable to Fetch Email")
     }

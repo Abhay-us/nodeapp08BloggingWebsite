@@ -30,6 +30,7 @@ const Login = () => {
 
         } catch (error) {
             console.log(" Login error", error);
+            window.alert("Email and Password Wrong")
         }
 
     }
@@ -70,7 +71,7 @@ const Login = () => {
                                         <label className="d-flex align-items-center login4-checkbox-label">
                                             <input type="checkbox" className="form-check-input me-2" /> Remember me
                                         </label>
-                                        <Link to={'/ForgotPassword'} className="text-decoration-none fw-medium login4-forgot-link">
+                                        <Link to={'/forgot-password'} className="text-decoration-none fw-medium login4-forgot-link">
                                             Forgot Password?
                                         </Link>
                                     </div>

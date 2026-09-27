@@ -20,7 +20,7 @@ router.delete('/user/delete/:id', usercontroller.deleteUser);
 
 router.post('/user/getbyemail', usercontroller.getUserByEmail);
 
-router.put('/user/updatepassword', usercontroller.updatePassword);
+router.put('/user/updatepassword/:id', usercontroller.updatePassword);
 
 router.post('/user/login', usercontroller.loginUser);
 
