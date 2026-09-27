@@ -18,6 +18,13 @@ router.put('/user/put/:id', usercontroller.putUser);
 
 router.delete('/user/delete/:id', usercontroller.deleteUser);
 
+router.post('/user/getbyemail', usercontroller.getUserByEmail);
+
+router.put('/user/updatepassword', usercontroller.updatePassword);
+
+router.post('/user/login', usercontroller.loginUser);
+
+
 module.exports = router;
 
 // posts route

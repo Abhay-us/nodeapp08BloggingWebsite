@@ -22,14 +22,14 @@ exports.getPostById = async (req, res) => {
 
 exports.postPost = async (req, res) => {
     const {
-        name,
+        postName,
         description,
         author
     } = req.body;
     try {
         const shortDescription = description.substring(0, 50);
         const post = new postTable({
-            name,
+            postName,
             description,
             shortDescription,
             author
@@ -44,7 +44,7 @@ exports.postPost = async (req, res) => {
 
 exports.putPost = async (req, res) => {
     const {
-        name,
+        postName,
         description,
     } = req.body;
     try {
@@ -52,7 +52,7 @@ exports.putPost = async (req, res) => {
 
         const shortDescription = description.substring(0, 50);
 
-        post.name = name;
+        post.postName = postName;
         post.description = description;
         post.shortDescription = shortDescription;
         await post.save();

@@ -1,0 +1,126 @@
+  .login4-container {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .login4-card {
+      max-width: 900px;
+  }
+
+  .login4-overlay {
+      background: rgba(102, 126, 234, 0.85);
+  }
+
+  .login4-welcome-title {
+      font-size: 2rem;
+  }
+
+  .login4-welcome-text {
+      max-width: 300px;
+      line-height: 1.6;
+  }
+
+  .login4-form {
+      width: 100%;
+      max-width: 350px;
+  }
+
+  .login4-form-title {
+      color: #333;
+  }
+
+  .login4-input-group {
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+  }
+
+  .login4-input-group:hover,
+  .login4-input-group:focus-within {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+  }
+
+  .login4-icon {
+      color: #667eea;
+  }
+
+  .login4-input:focus {
+      outline: none;
+  }
+
+  .login4-input::placeholder {
+      color: #999;
+      font-size: 0.9rem;
+  }
+
+  .login4-options {
+      font-size: 0.85rem;
+  }
+
+  .login4-checkbox-label {
+      color: #666;
+      cursor: pointer;
+  }
+
+  .login4-forgot-link {
+      font-size: 0.85rem;
+      color: #667eea;
+  }
+
+  .login4-forgot-link:hover {
+      text-decoration: underline !important;
+  }
+
+  .login4-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      letter-spacing: 1px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+  }
+
+  .login4-btn:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  }
+
+  .login4-or-text {
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+  }
+
+  .login4-social-icon {
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+
+  .login4-social-icon.facebook {
+      background: #3b5998;
+  }
+
+  .login4-social-icon.facebook:hover {
+      background: #2d4373;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(59, 89, 152, 0.4);
+  }
+
+  .login4-social-icon.twitter {
+      background: #1da1f2;
+  }
+
+  .login4-social-icon.twitter:hover {
+      background: #0d95e8;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(29, 161, 242, 0.4);
+  }
+
+  .login4-social-icon.google {
+      background: #db4437;
+  }
+
+  .login4-social-icon.google:hover {
+      background: #c23321;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(219, 68, 55, 0.4);
+  }

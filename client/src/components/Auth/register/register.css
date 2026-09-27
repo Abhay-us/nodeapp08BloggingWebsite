@@ -1,0 +1,59 @@
+.reg1-container {
+    background-color: rgba(40, 212, 255, 0.096);
+}
+
+.reg-1-img {
+    height: 50vh;
+}
+
+.input-box-reg1 {
+    position: relative;
+}
+
+.input-box-reg1 .icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #444;
+    font-size: 12px;
+}
+
+.input-box-reg1 input {
+    border: none;
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+    box-shadow: none !important;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.input-box-reg1 input:focus {
+    border-bottom: 2px solid #4fc3f7;
+}
+
+.input-box-reg1::after {
+    content: "";
+    position: absolute;
+    left: 35px;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #4fc3f7;
+    transition: 0.4s ease;
+}
+
+.form-control::placeholder {
+    color: #000000;
+}
+
+.form-check-label a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.btn-info {
+    width: 170px;
+    border-radius: 5px;
+}
