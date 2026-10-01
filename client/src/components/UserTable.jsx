@@ -57,7 +57,7 @@ const UserTable = () => {
     const postUser = async (data) => {
         try {
             await axiosinterceptor.post(`/user/post`, data)
-            toast.success("User Added Successfully.", { position: "bottom-right" })
+            toast.success("User Added Successfully.", { position: "bottom-right" });
             setShowForm(false);
         } catch (error) {
             console.log("Unable to post user", error)
@@ -116,7 +116,6 @@ const UserTable = () => {
                         <Button
                             variant="primary"
                             onClick={() => {
-                                setEditUser(null);
                                 reset({
                                     name: "",
                                     email: "",

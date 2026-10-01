@@ -1,3 +1,11 @@
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
+
+if (!process.env.JWT_PUBLIC_SECRET_KEY) {
+    console.log("JWT key missing ");
+    process.exit(1);
+}
+
 const express = require("express");
 const bodyparser = require("body-parser");
 const mongoose = require('mongoose');

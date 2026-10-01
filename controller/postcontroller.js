@@ -1,4 +1,5 @@
 const postTable = require("../model/postsmodel");
+const userTable = require('../model/usermodel');
 
 
 exports.getPost = async (req, res) => {
@@ -9,6 +10,30 @@ exports.getPost = async (req, res) => {
         res.status(400).send("Unable To Fetch Posts");
     }
 };
+
+exports.getPostWithAuthor = async (req, res) => {
+    try {
+        const posts = await postTable.find();
+
+        const postsWithAuthor = await Promise.all(
+            posts.map(async (postitem) => {
+                const user = await userTable.findById(postitem.author);
+                return {
+                    ...postitem.toObject(),
+                    // authordetail: user
+                    authorname: user.name
+                };
+            })
+        );
+
+        console.log("Posts", postsWithAuthor);
+        res.json(postsWithAuthor);
+
+    } catch (error) {
+        res.status(400).send("Unable To Fetch eeeeeeePosts");
+    }
+};
+
 
 exports.getPostById = async (req, res) => {
     try {

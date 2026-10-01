@@ -1,4 +1,5 @@
 const userTable = require('../model/usermodel');
+const jwt = require('jsonwebtoken');
 
 exports.getUser = async (req, res) => {
     try {
@@ -19,6 +20,16 @@ exports.getUserById = async (req, res) => {
     }
 }
 
+exports.getUserNameAndId = async (req, res) => {
+    try {
+
+        const user = await userTable.find().select("_id name");
+        console.log("user", user);
+        res.status(200).send(user);
+    } catch (error) {
+        res.status(400).send("Unable to fetch user");
+    }
+};
 exports.postUser = async (req, res) => {
     const { name, email, phoneNumber, password, gender } = req.body;
 
@@ -115,8 +126,18 @@ exports.loginUser = async (req, res) => {
         if (user.password !== password) {
             return res.status(401).send("Invalid Password");
         }
+        const token = jwt.sign(
+            {
+                userId: user._id.toString(),
+                email: user.email
+            },
+            process.env.JWT_PUBLIC_SECRET_KEY,
+            { expiresIn: process.env.JWT_EXPIRES_IN || "2h" }
+        );
+
         return res.status(200).json({
             message: "Login Successfull",
+            token,
             user: {
                 _id: user._id,
                 name: user.name,

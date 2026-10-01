@@ -11,6 +11,11 @@ const axiosinterceptor = axios.create({
 axiosinterceptor.interceptors.request.use(
     (config) => {
         console.log("Request : ", config);
+        const token = localStorage.getItem("authToken");
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+
         return config;
     },
     (error) => {
@@ -24,6 +29,14 @@ axiosinterceptor.interceptors.response.use(
         return response;
     },
     (error) => {
+        if (error.response?.status === 401) {
+            localStorage.removeItem("authToken");
+            localStorage.removeItem("user");
+
+            if (window.location.pathname !== "/login") {
+                window.location.replace("/login");
+            }
+        }
         return Promise.reject(error);
     }
 )
